@@ -1,0 +1,69 @@
+git
+remove cached files
+$git rm . -r --cached
+
+gpg
+rvm
+  rvm list
+  rvm install 2.4.0
+  rvm unistall 2.2.4
+  rvm 2.4.0 use --default
+  rvm gemset list
+  rvm genset use global
+update gem
+  gem update --system
+  gem update
+  gem install bundler (ruby gem that allows you to package up all the various code libraries)
+  gem install nokogiri (communicate with outside services, being able to parse them, etc.)
+  gem install rails
+  
+  
+Postgresql must be already installed
+To startup the Postgres database
+  $ sudo service postgresql start
+  
+To generate a new RAILS app
+$ rails new <name> -T --database=postgresql
+$ rails db:create 
+
+********************
+fkurusu:~/workspace/BlogApp (master) $ psql
+psql (9.3.18, server 9.3.19)
+Type "help" for help.
+
+ubuntu=# UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+UPDATE 1
+ubuntu=# DROP DATABASE template1;
+DROP DATABASE
+ubuntu=# CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UNICODE';
+CREATE DATABASE
+ubuntu=# UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+UPDATE 1
+ubuntu=# \c template1
+psql (9.3.18, server 9.3.19)
+You are now connected to database "template1" as user "ubuntu".
+template1=# VACUUM FREEZE;
+VACUUM
+template1=# exit
+template1-# \q
+fkurusu:~/workspace/BlogApp (master) $ rails db:create
+Created database 'BlogApp_development'
+Created database 'BlogApp_test'
+********************
+
+To start rails server in cloud9
+$ rails s -b $IP -p $PORT
+
+
+-----------------------
+
+Scaffold
+$ rails g scaffold Blog title:string body:text
+
+$ rails db:migrate
+
+------------
+
+CONTROLLER GENERATOR
+
+$ rails g controller Pages home about contact
