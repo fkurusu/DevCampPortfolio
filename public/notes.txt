@@ -65,5 +65,15 @@ $ rails db:migrate
 ------------
 
 CONTROLLER GENERATOR
-
+$ git checkout -b controller-generator
 $ rails g controller Pages home about contact
+create pull request and merge in github
+then 
+$ git pull in the master branch
+
+MODEL GENERATOR
+
+$ git checkout -b model-generator
+$ rails g model Skill title:string percent_utilized:integer
+
+$ rails db:migrate
