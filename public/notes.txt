@@ -77,3 +77,21 @@ $ git checkout -b model-generator
 $ rails g model Skill title:string percent_utilized:integer
 
 $ rails db:migrate
+
+RESOURCE GENERATOR
+
+$ git checkout -b resource-generator
+
+$ rails g resource Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
+$ rails db:migrate
+
+
+-------------------------
+
+#SEEDS file
+
+After seeding run this:
+
+$ rails db:setup
+
+
