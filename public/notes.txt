@@ -94,4 +94,8 @@ After seeding run this:
 
 $ rails db:setup
 
+--------------------
+
+Generate portfolio actions controller by hand
+
 
