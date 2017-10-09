@@ -98,4 +98,24 @@ $ rails db:setup
 
 Generate portfolio actions controller by hand
 
+----------------------
+
+Firndly routes
+
+gem 'friedly_id'
+
+$ rails generate friendly_id
+$ rails db:migrate
+
+Add the slug ttribute to the model we want
+slug:string:uniq
+
+$ rails g migration add_slug_to_blogs slug:string:uniq
+
+Into the blogs model include this:
+extend FriendlyId
+friendly_id [], use: :slugged
+
+
+
 
