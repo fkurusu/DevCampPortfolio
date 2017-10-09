@@ -112,10 +112,25 @@ slug:string:uniq
 
 $ rails g migration add_slug_to_blogs slug:string:uniq
 
+$ rails db:migrate
+
 Into the blogs model include this:
 extend FriendlyId
 friendly_id [], use: :slugged
 
+In teh controller
+@blog = Blog.find(params[:id])
+
+Blog.find_each(&:save)
+
+------------------------------
+
+ENUMS
+
+$ rails g migration add_status_to_blogs status:integer
+
+Migration file add the default
+add_column :blogs, :status, :integer, default: 0
 
 
 
