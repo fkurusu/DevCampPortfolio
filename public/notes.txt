@@ -107,7 +107,7 @@ gem 'friedly_id'
 $ rails generate friendly_id
 $ rails db:migrate
 
-Add the slug ttribute to the model we want
+Add the slug ttribute to the table we want
 slug:string:uniq
 
 $ rails g migration add_slug_to_blogs slug:string:uniq
@@ -115,11 +115,11 @@ $ rails g migration add_slug_to_blogs slug:string:uniq
 $ rails db:migrate
 
 Into the blogs model include this:
-extend FriendlyId
-friendly_id [], use: :slugged
+  extend FriendlyId
+  friendly_id [attribute_name], use: :slugged
 
 In teh controller
-@blog = Blog.find(params[:id])
+@blog = Blog.friendly.find(params[:id])
 
 Blog.find_each(&:save)
 
@@ -132,5 +132,11 @@ $ rails g migration add_status_to_blogs status:integer
 Migration file add the default
 add_column :blogs, :status, :integer, default: 0
 
+$ rails c
+  > Blog.last.published! Updates the last blog with published
+  > Blog.published  Selects all blogs with pusblished value
+  
+  > Blog.last.draft?
+  > Blog.last.published?
 
 
