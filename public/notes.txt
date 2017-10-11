@@ -155,3 +155,8 @@ Add 1:M relatioship
 
 $ rails g migration add_topic_reference_to_blogs topic:references
 $ rails db:migrate
+
+
+--------
+Custom scopes:
+It's a custom db query
