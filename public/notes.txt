@@ -140,9 +140,18 @@ $ rails c
   > Blog.last.published?
 
 ************************
+Table relationships 
 
 git checkout -b data-feature
 
 In the models:
 
 validates_presence_of :[value]
+
+$ rails g model Topic title:string
+$ rails db:migrate
+
+Add 1:M relatioship
+
+$ rails g migration add_topic_reference_to_blogs topic:references
+$ rails db:migrate
