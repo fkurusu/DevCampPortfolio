@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.save
         format.html{
-          redirect_to @portfolio_item,
+          redirect_to portfolio_show_path(@portfolio_item),
           notice: 'Portfolio created.'
         }
       else
