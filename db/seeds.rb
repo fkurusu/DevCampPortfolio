@@ -11,6 +11,7 @@
     title: "Topic #{topic + 1}"
   )
 end
+puts "3 topics created."
 
 10.times do |blog|
   Blog.create!(
@@ -48,3 +49,12 @@ Portfolio.create!(
 )
 
 puts "9 portfolio items created."
+
+3.times do |technology|
+  Technology.create!(
+    name: "Rails #{technology + 1}",
+    portfolio: Portfolio.last
+  )
+end
+
+puts "3 technologies created."

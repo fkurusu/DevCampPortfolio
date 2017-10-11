@@ -184,6 +184,13 @@ Add an image to skill model
 $ rails g migration add_badge_to_skills badge:text
 $ rails db:migrate
 
+------------
+Nested atributes
+
+$ rails g model Technology name:string portfolio:references
+
+add has_many technolgies to portfolio model
+
 
 
 
