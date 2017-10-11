@@ -139,4 +139,10 @@ $ rails c
   > Blog.last.draft?
   > Blog.last.published?
 
+************************
 
+git checkout -b data-feature
+
+In the models:
+
+validates_presence_of :[value]
