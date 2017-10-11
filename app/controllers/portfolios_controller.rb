@@ -37,7 +37,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio_item.update(portfolio_item_params)
         format.html{
-          redirect_to @portfolio_item,
+          redirect_to portfolio_show_path(@portfolio_item),
           notice: 'Portfolio updated successfully.'
         }
       else
