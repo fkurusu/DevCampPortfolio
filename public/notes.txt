@@ -189,7 +189,7 @@ Nested atributes
 
 $ rails g model Technology name:string portfolio:references
 
-add has_many technolgies to portfolio model
+add has_many technologies to portfolio model
 
 
 -----------
@@ -198,6 +198,26 @@ Add Technologies via New portfolio
 In portfolio model add:
 
 accepts_nested_attributes_for :technologies, reject_if: lambda{ |attrs| attrs['name].blank? }
+
+Inthe new action add:
+
+3.times{ @portfolio_item.technologies.build }
+
+Modify the strong parameters
+def portfolio_item_params
+      params.require(:portfolio).permit(:title, :subttile, :body, technologies_attributes: [:name])
+    end
+
+
+
+
+
+
+
+
+
+
+
 
 
 
