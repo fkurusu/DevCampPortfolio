@@ -192,6 +192,15 @@ $ rails g model Technology name:string portfolio:references
 add has_many technolgies to portfolio model
 
 
+-----------
+Add Technologies via New portfolio
+
+In portfolio model add:
+
+accepts_nested_attributes_for :technologies, reject_if: lambda{ |attrs| attrs['name].blank? }
+
+
+
 
 
 
