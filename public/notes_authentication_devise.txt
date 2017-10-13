@@ -33,3 +33,7 @@ $ rails g devise User
 Add :name field to User (DeviseCreateUsers)
 
 $ rails db:migrate
+
+Routes file
+devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+
