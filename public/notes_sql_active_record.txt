@@ -1,0 +1,55 @@
+------------------------- SQL - ActiveRecord ----------------------
+Active Record Query Interface
+http://guides.rubyonrails.org/active_record_querying.html
+
+Table:
+  Books 
+  - title - author_id - genre_id - sales
+  In rails console you can execute a SQL command directly
+  > Book.find_by_sql("SELECT books.* FROM books")
+  
+  > Book.where(title: 'Tre').first.title
+  > Book.find_by(title: 'The Force').title
+  > Book.find_by_title("The Force").author
+  > Author.first.books.sum(:sales)
+    => 500
+  > Books.average(:sales).to_f
+    => 673.72
+  > Books.maximum(:sales)
+  > Books.order('sales DESC').first
+  
+  4:56
+  
+  Run multiple queries and being able to connect tablesthat technically are not connected
+  
+  Books              Authors              Genre
+  title              name                 name
+  author_id          country
+  genre_id
+  sales
+  
+  What authors had been written an specific genre?
+  Genres have many authors
+  Authors have many genres
+  
+  Model Author
+  has_many :books
+  has_many :genres, through: :books 
+  
+  Model Genres
+  has_many :books
+  has_many :authors, through: :books
+  
+  > vader = Author.first
+  > vader.genres
+    => [...]
+
+PLUCK
+  > Genre.pluck(:name)
+    => ["Biographies","Non-fiction","fiction"]
+    
+INCLUDES method
+it wraps up all of our database queries into a single one
+  def index
+    @books = Book.includes(:author, :genre)
+  end

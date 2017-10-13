@@ -1,0 +1,11 @@
+PivotalTracker
+
+- Authentication
+  - Implement the devise gem
+  - Customize the routes
+  - Customize the attributes
+
+$ git checkout -b authentication
+
+Add devise gem to Gemfile
+gem 'devise'. '~> 4.2'
