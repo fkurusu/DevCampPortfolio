@@ -9,3 +9,27 @@ $ git checkout -b authentication
 
 Add devise gem to Gemfile
 gem 'devise'. '~> 4.2'
+
+$ bundle install
+
+$ rails g devise:install
+
+In the development.rb file under config/environments add at the end of the file:
+
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+Defined root_url to routes
+  root to: 'home#index'
+  
+Add flash messages to application.html.erb
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+$ rails g devise:views
+
+$ rails g devise User
+
+Add :name field to User (DeviseCreateUsers)
+
+$ rails db:migrate
