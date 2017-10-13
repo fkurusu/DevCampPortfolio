@@ -4,6 +4,7 @@ PivotalTracker
   - Implement the devise gem
   - Customize the routes
   - Customize the attributes
+  - Integrate virtual attributes
 
 $ git checkout -b authentication
 
@@ -36,4 +37,27 @@ $ rails db:migrate
 
 Routes file
 devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
+
+To use strong parameter with devise do this:
+
+(Devise whitelist)
+
+application_controller.rb
+
+before_action :configure_permitted_parameters, if: :devise_controller?
+  
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+  end
+
+
+
+
+
+
+
+
+
+
 
