@@ -75,7 +75,12 @@ In the application controller add:
   
   
 
+-------------------- 
+VIRTUAL Attributes.
 
+An attibute thet is not a column name
+
+ 
 
 
 
