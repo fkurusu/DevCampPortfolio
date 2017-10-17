@@ -1,0 +1,20 @@
+SOCIAL MEDIA PROFILES.
+
+In ApplicationController
+
+before_action :set_source
+
+def set_source
+  session[:source] = params[:q]
+end
+
+Sessions: underlying all the pages in the site, how the application is communicatiing with the browser
+
+:q is the query string
+
+In application.html.erb
+
+<% if session[:source] %>
+  <p>Thanks for visiting me from <%= session[:source] %></p>
+<% end %>
+
