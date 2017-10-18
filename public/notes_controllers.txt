@@ -18,3 +18,4 @@ In application.html.erb
   <p>Thanks for visiting me from <%= session[:source] %></p>
 <% end %>
 
+Add the set_source method under applicationController to a module and included in applicationController
