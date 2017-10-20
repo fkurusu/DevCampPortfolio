@@ -19,3 +19,28 @@ In application.html.erb
 <% end %>
 
 Add the set_source method under applicationController to a module and included in applicationController
+
+
+-------------------
+STRONG PARAMETERS
+
+DONT do:
+in config/application.rb
+
+module DevCampPortfolio
+  class Application < Rails::Application
+    config.action_controller.permit_all_parameters = true
+    
+-------------------
+NULL OBJECT PATTERN
+
+application_controller.rb
+ 
+Mimic a guest user with OpenStruct and have all the user parameters.
+OpenStruct gives a mini data structure
+ 
+def current_user
+  super || OpenStruct.new(name: 'Guest User', first_name: 'Guest', last_name: 'User')
+end
+
+
