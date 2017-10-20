@@ -1,0 +1,17 @@
+application.html.erb
+
+<head>
+    <title><%= @page_title %></title>
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+    
+application_controller
+  include DefaultPageContent
+    
+concern default_page_content
+  def set_default_pages
+    @page_title = "DevCampPortfolio | My portfolio"
+    @seo_keywords = "Fernando Cruz portfolio blog"
+  end
+  
+  
+  
