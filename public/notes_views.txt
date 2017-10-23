@@ -13,5 +13,18 @@ concern default_page_content
     @seo_keywords = "Fernando Cruz portfolio blog"
   end
   
+************
+Multiple Layout files
+
+Create blog.html.erb under views/layouts
+
+Add 
+layout :blog
+in blogs_controller
   
-  
+Add this line:
+Rails.application.config.assets.precompile += %w( blogs.css )
+
+under assets.rb
+
+Do the same for portfolios
