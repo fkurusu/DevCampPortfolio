@@ -24,7 +24,14 @@ in blogs_controller
   
 Add this line:
 Rails.application.config.assets.precompile += %w( blogs.css )
-
 under assets.rb
 
+Comment require_tree and require_self in application.css
+
 Do the same for portfolios
+
+****************************
+
+PARTIALS
+
+
