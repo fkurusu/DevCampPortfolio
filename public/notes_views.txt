@@ -34,4 +34,37 @@ Do the same for portfolios
 
 PARTIALS
 
+Create a file called _nav.html.erb under views/
+Copi the nav bar inside the application.html.erb and portfolio and blog layouts, inside this files add:
+
+<%= render 'shared/nav', location: 'top' %>
+
+Partial form for portfolios
+
+Create _form.html.erb under views/portfolios and copy the form inside the new.html.erb
+
+In the edit and new files add:
+<%= render 'form' %>
+
+***********************
+
+View HELPERS
+
+the helpers are written in ruby, under app/helpers/application_helper.rb
+
+Keep the conditionals logic outside the views
+
+Inside aplication_helper.rb
+  def login_helper
+    if current_user.is_a?(User)
+      link_to 'Logout', destroy_user_session_path, method: :delete
+    else
+      link_to 'Register', new_user_registration_path
+      link_to 'Login', new_user_session_path
+    end 
+  end
+
+Inside the templates:
+  <%= login_helper %>
+
 
