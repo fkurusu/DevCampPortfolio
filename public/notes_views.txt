@@ -67,4 +67,35 @@ Inside aplication_helper.rb
 Inside the templates:
   <%= login_helper %>
 
+************************
+Content HELPER methods
+They are items we can use in proccess inside either views or inside these type methods.
 
+application_helper
+  def source_helper
+    if session[:source]
+     content_tag :p, "Thanks for visiting me from  #{session[:source]}"
+    end
+  end
+
+In the templates
+<%= source_helper %>
+
+*******************
+Partial collections
+
+Portfolios
+
+controller index action:
+@portfolio_items
+
+index.html.erb
+<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+
+create _portfolio_item.html.erb
+
+Blogs
+_blog.html.erb
+
+index view 
+<%= render @blogs %>
