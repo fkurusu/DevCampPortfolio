@@ -99,3 +99,21 @@ _blog.html.erb
 
 index view 
 <%= render @blogs %>
+
+***************************
+ActionView Helper Methods
+
+In _blog partial add another td tag
+
+<td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
+
+contact.html.erb
+<p><%= number_to_phone "5512934293" %></p>
+
+<p><%= number_to_currency "532.293" %></p>
+
+<p><%= number_to_percentage "80.4" %></p>
+
+
+
+
