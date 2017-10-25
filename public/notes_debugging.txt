@@ -1,0 +1,30 @@
+DEBUGGING
+
+ByeBug
+byebug gives us a working break point.
+
+Right at the spot where byebug is called,  it creates a break point and the web server is hanging
+
+def index
+  @blogs = Blog.all
+  byebug
+end
+
+It gives us a little terminal in the web server console
+
+After finishing debugging just type:
+continue
+
+PRY
+https://github.com/nixme/pry-debugger
+
+Intall it in Rails, the Gemfile
+gem 'pry-byebug'
+
+To create a breakpoint use binding.pry
+
+Use "continue" moves down to the next pry line
+Use "next" to go to the next pry breakpoint in the code
+Use 'g' and 'k' to navigate inside the pry console
+Use 'q' or 'exit' to quite the pry console
+
