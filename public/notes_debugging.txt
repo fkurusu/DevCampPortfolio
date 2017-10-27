@@ -28,3 +28,19 @@ Use "next" to go to the next pry breakpoint in the code
 Use 'g' and 'k' to navigate inside the pry console
 Use 'q' or 'exit' to quite the pry console
 
+
+ERROR MANAGEMENT
+
+def divide(num1, num2)
+  begin
+    num1 / num2
+  rescue => e
+    puts "Error occurred: #{e}"
+  end
+end
+
+
+***********
+
+repl.it
+
