@@ -3,6 +3,27 @@ Utilize various Gems in order to implement:
 
 ---------------------
 
+Gemfile
+
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
+$bundle install
+
+Add:
+
+@import "bootstrap";
+
+Into each scss layout
+
+Add into application.js
+
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+
+
+
 
 
 ---------------------
