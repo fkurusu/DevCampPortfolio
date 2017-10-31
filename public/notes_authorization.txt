@@ -15,3 +15,27 @@ $ bundle install
 
 $ rails g petergate:install
 $ rails db:migrate
+
+***********************
+
+Implement CODE for authorization
+
+Create a GuestUser model which inherits from User model
+Modify current_user_concern guest_user method
+Change the login_helper method in the if conditional
+
+
+In the User model modify this line:
+  petergate(roles: [:site_admin], multiple: false)                                      ##
+  
+In the blogs_controller add:
+
+access all: [:show, :index], user: { except: [:destroy, :new, :create, :edit, :update]}, site_admin: :all
+
+$rails c
+> User.first.update!(roles: 'site_admin')
+
+In the blog index page add to the new link and in the partial for edit and destroy:
+
+<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+
