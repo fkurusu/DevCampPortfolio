@@ -52,5 +52,6 @@ gem 'friendly_id'
 gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'jquery-rails'
+gem 'petergate', '~> 1.8'
 
 gem 'devcamp_view_tool'
