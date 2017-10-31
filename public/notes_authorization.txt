@@ -1,0 +1,11 @@
+Authorization
+*************
+It's about permissions
+
+ - Integrate authorization for app's permission structure
+ * Install the petergate gem
+ * Configure gem
+ * Implement code for authorization
+ 
+
+
