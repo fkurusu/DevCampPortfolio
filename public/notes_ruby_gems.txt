@@ -29,3 +29,29 @@ Add into application.js
 ---------------------
 
 Custom GEM
+
+Into application_controller
+
+...
+module DevcampViewTool
+  class Renderer
+    def self.copyright name, msg
+      "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+    end
+  end
+end
+
+
+under ../gemscreated
+$ bundle gem devcamp_view_tool
+
+gem 'devcamp_view_tool', git: 'https://github.com/jordanhudgens/devcamp_view_tool'
+
+application_helper.rb
+  def copyright_generator
+    DevcampViewTool::Renderer.copyright 'Fernando Cruz', 'All rights reserved'
+  end
+  
+application.html.erb
+<%= copyright_generator %>
+
