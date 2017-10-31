@@ -8,4 +8,10 @@ It's about permissions
  * Implement code for authorization
  
 
+In the Gemfile
+gem 'petergate', '~> 1.8'
 
+$ bundle install
+
+$ rails g petergate:install
+$ rails db:migrate
