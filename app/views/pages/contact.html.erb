@@ -1,2 +1,17 @@
-<h1>Pages#contact</h1>
-<p><%= number_to_phone "5512934293" %></p>
+<h1>Would you like us to work together?</h1>
+<hr class="bg-secondary"/>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Officce Address</h4>
+    <p>LOCATION MAP</p>
+    
+    <h4>Phone</h4>
+    <p><%= number_to_phone "5512934293" %></p>
+
+    <h4>Email</h4>
+    <%= mail_to "f.cruzval@gmail.com", "My email", cc: "ccaddress@domain.com", subject: "Portfolio Contact" %>
+  </div>
+  <div class="col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.073744418149!2d-99.22087378552526!3d19.45238708687307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d20238a1381431%3A0x24eb913150405278!2sSofttek+Toreo!5e0!3m2!1ses!2smx!4v1510014213056" width="450" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+</div>
